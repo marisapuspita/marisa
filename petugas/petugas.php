@@ -4,6 +4,10 @@ if (!isset($_SESSION['nama']))
 {
   die("Anda Belum Login");
 }
+if ($_SESSION['level']!="petugas") 
+{
+  die("anda bukan petugas");
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +24,11 @@ if (!isset($_SESSION['nama']))
   <title>Masyarakat</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -41,7 +45,7 @@ if (!isset($_SESSION['nama']))
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-keyboard"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Pengaduan Masyarakat</div>
+        <div class="sidebar-brand-text mx-3">APPEM</div>
       </a>
 
       <!-- Divider -->
@@ -49,7 +53,7 @@ if (!isset($_SESSION['nama']))
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="masyarakat.php">
+        <a class="nav-link" href="petugas.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -66,23 +70,19 @@ if (!isset($_SESSION['nama']))
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="?url=tulis_pengaduan">
+        <a class="nav-link" href="?url=verifikasi_pengaduan">
           <i class="fas fa-edit"></i>
-          <span>Tulis Pengaduan</span></a>
+          <span>Verifikasi Pengaduan</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="?url=lihat_pengaduan">
-          <i class="fas fa-fw fa-search"></i>
-          <span>Lihat Laporan</span></a>
-      </li>
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
       <li class="nav-item">
-        <a class="nav-link" href="logout.php">
+        <a class="nav-link" href="../logout.php">
           <i class="fas fa-sign-out-alt"></i>
           <span>Keluar</span></a>
       </li>
@@ -102,7 +102,7 @@ if (!isset($_SESSION['nama']))
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-red topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -118,7 +118,7 @@ if (!isset($_SESSION['nama']))
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <?php include 'halaman_masyarakat.php'; ?>
+          <?php include 'halaman_petugas.php'; ?>
 
         </div>
         <!-- /.container-fluid -->
@@ -130,7 +130,7 @@ if (!isset($_SESSION['nama']))
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>marisapuspita&copy;2021</span>
+            <span>maarisapuspita &copy; 2021</span>
           </div>
         </div>
       </footer>
@@ -167,14 +167,14 @@ if (!isset($_SESSION['nama']))
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 
